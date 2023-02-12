@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Ubuntu";
+    src: local('Ubuntu-Regular'), url("/fonts/Ubuntu-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url('Ubuntu-Medium'), url("/fonts/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url('Ubuntu-Bold'), url("/fonts/Ubuntu-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+* {
+    font-family: "Ubuntu" !important;
+}
