@@ -16,7 +16,7 @@ export function Steps(props: StepProps) {
         `}>
             {
                 props.stepData.map(step => (
-                    <StepIndicator isActive={step.id === props.activeStep} title={step.title} stepNumber={step.id} />
+                    <StepIndicator key={step.id} isActive={step.id === props.activeStep} title={step.title} stepNumber={step.id} />
                 ))
             }
         </div>

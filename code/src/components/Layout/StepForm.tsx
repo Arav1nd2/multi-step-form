@@ -1,4 +1,5 @@
-import { ReactNode } from "react"
+import { ReactNode, useContext } from "react"
+import { StepFormContext } from "../../utils";
 import { Button } from "../Button/Button"
 
 interface StepFormProps {
@@ -9,7 +10,8 @@ interface StepFormProps {
     children: ReactNode
 }
 
-export function StepForm(props: StepFormProps) {
+export function StepFormLayout(props: StepFormProps) {
+    const formAPI = useContext(StepFormContext)
     return (
         <div className={`
             p-6
@@ -25,18 +27,18 @@ export function StepForm(props: StepFormProps) {
                 {props.children}
             </div>
             <footer className={`
-                w-full flex mb-2 absolute bottom-0 left-0 bg-white p-4
-                sm:relative sm:p-0
+                w-full flex absolute bottom-0 left-0 bg-white p-4
+                sm:relative sm:p-0 sm:mb-2
             `}>
                 {!props.isFirst && (
-                    <Button type="secondary" onClick={() => { }}>
+                    <Button type="secondary" onClick={() => { formAPI?.prevStep() }}>
                         Go Back
                     </Button>
                 )}
                 <Button
                     type={props.isLast ? "final" : "primary"}
                     className="ml-auto"
-                    onClick={() => { }}
+                    onClick={() => { formAPI?.nextStep() }}
                 >
                     {props.isLast ? "Confirm" : "Next Step"}
                 </Button>
