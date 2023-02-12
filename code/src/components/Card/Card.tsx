@@ -15,10 +15,10 @@ export function Card(props: CardProps) {
     return (
         <div className={`
             p-4 border rounded-lg
-            ${props.isActive === true ? "border-purple-blue bg-alabaster" : "border-cool-gray"}
+            ${props.isActive === true ? "border-purple-blue bg-alabaster" : "border-light-gray"}
             hover:border-purple-blue
-            sm:max-w-[160px]
             flex
+            flex-auto
             items-start
             sm:flex-col
         `}>

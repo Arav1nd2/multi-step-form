@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { PersonalInfoForm } from './components/Forms/PersonalInfoForm'
+import { SelectPlanForm } from './components/Forms/SelectPlanForm'
 import { MainSection } from './components/Layout/MainSection'
 import { Sidebar } from './components/Layout/Sidebar'
 import { StepFormLayout } from './components/Layout/StepForm'
@@ -18,7 +19,8 @@ function App() {
           </Sidebar>
           <MainSection>
             <StepFormLayout {...stepFormProps}>
-              <h1>hello</h1>
+              <PersonalInfoForm />
+              <SelectPlanForm />
             </StepFormLayout>
           </MainSection>
         </div>
