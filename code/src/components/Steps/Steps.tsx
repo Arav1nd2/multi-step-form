@@ -9,6 +9,10 @@ interface StepProps {
 }
 
 export function Steps(props: StepProps) {
+    const isStepActive = (id: number) => {
+        if (props.activeStep <= 3) return id === props.activeStep;
+        return id >= 4;
+    }
     return (
         <div className={`
             flex w-3/4 justify-evenly mx-auto mt-12
@@ -16,7 +20,7 @@ export function Steps(props: StepProps) {
         `}>
             {
                 props.stepData.map(step => (
-                    <StepIndicator key={step.id} isActive={step.id === props.activeStep} title={step.title} stepNumber={step.id} />
+                    <StepIndicator key={step.id} isActive={isStepActive(step.id)} title={step.title} stepNumber={step.id} />
                 ))
             }
         </div>

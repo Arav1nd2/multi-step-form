@@ -7,11 +7,12 @@ interface StepFormProps {
     subheading: string,
     isLast: boolean,
     isFirst: boolean,
-    children: ReactNode
+    children: ReactNode,
 }
 
 export function StepFormLayout(props: StepFormProps) {
     const formAPI = useContext(StepFormContext)
+    const showHeaderFooter = formAPI?.step != 5 || false;
     return (
         <div className={`
             p-6
@@ -19,14 +20,14 @@ export function StepFormLayout(props: StepFormProps) {
             flex flex-col
             h-full
         `}>
-            <header className="mt:2 sm:mt-6 tracking-wide">
+            {showHeaderFooter && <header className="mt:2 sm:mt-6 tracking-wide">
                 <h1 className="text-2xl font-bold text-marine-blue sm:text-3xl">{props.heading}</h1>
                 <h2 className="text-cool-gray mt-2">{props.subheading}</h2>
-            </header>
+            </header>}
             <div className="flex-auto grow">
                 {props.children}
             </div>
-            <footer className={`
+            {showHeaderFooter && <footer className={`
                 w-full flex absolute bottom-0 left-0 bg-white p-4
                 sm:relative sm:p-0 sm:mb-2
             `}>
@@ -42,7 +43,7 @@ export function StepFormLayout(props: StepFormProps) {
                 >
                     {props.isLast ? "Confirm" : "Next Step"}
                 </Button>
-            </footer>
+            </footer>}
         </div>
     );
 }
