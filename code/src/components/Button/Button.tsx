@@ -11,9 +11,9 @@ interface ButtonProps {
     onClick: ButtonClickHandler
 }
 
-const primaryClasses = "text-white bg-marine-blue px-6 py-3 rounded-lg hover:bg-marine-blue-50";
-const secondaryClasses = "text-cool-gray px-6 py-3 rounded-lg hover:text-marine-blue";
-const finalClasses = "text-white bg-purple-blue px-8 py-3 rounded-lg hover:bg-marine-blue-50"
+const primaryClasses = "block text-white bg-marine-blue px-6 py-3 rounded-lg hover:bg-marine-blue-50";
+const secondaryClasses = "block text-cool-gray px-6 py-3 rounded-lg hover:text-marine-blue";
+const finalClasses = "block text-white bg-purple-blue px-8 py-3 rounded-lg hover:bg-marine-blue-50"
 
 function makeStyle(type: ButtonType, className: string) {
     switch (type) {
