@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-type ButtonType = "primary" | "secondary";
+type ButtonType = "primary" | "secondary" | "final";
 
 type ButtonClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => void;
 
@@ -13,6 +13,7 @@ interface ButtonProps {
 
 const primaryClasses = "text-white bg-marine-blue px-6 py-3 rounded-lg hover:bg-marine-blue-50";
 const secondaryClasses = "text-cool-gray px-6 py-3 rounded-lg hover:text-marine-blue";
+const finalClasses = "text-white bg-purple-blue px-8 py-3 rounded-lg hover:bg-marine-blue-50"
 
 function makeStyle(type: ButtonType, className: string) {
     switch (type) {
@@ -20,6 +21,8 @@ function makeStyle(type: ButtonType, className: string) {
             return (primaryClasses + " " + className).trim();
         case "secondary":
             return (secondaryClasses + " " + className).trim();
+        case "final":
+            return (finalClasses + " " + className).trim();
         default:
             return "text-red-500";
     }

@@ -1,7 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Card, PriceUnit } from './Card';
+import { Card } from './Card';
+import { PriceUnit } from '../../types';
+
 
 export default {
     title: 'Card',

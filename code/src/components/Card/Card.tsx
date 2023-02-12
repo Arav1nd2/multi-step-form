@@ -1,8 +1,5 @@
+import { PriceUnit } from "../../types";
 
-export enum PriceUnit {
-    YEARLY,
-    MONTHLY
-}
 
 interface CardProps {
     icon: string,
@@ -19,6 +16,7 @@ export function Card(props: CardProps) {
         <div className={`
             p-4 border rounded-lg
             ${props.isActive === true ? "border-purple-blue bg-alabaster" : "border-cool-gray"}
+            hover:border-purple-blue
             sm:max-w-[160px]
             flex
             items-start

@@ -8,7 +8,7 @@ interface StepIndicatorProps {
 
 export function StepIndicator(props: StepIndicatorProps) {
     return (
-        <div className="flex bg-purple-blue">
+        <div className="flex">
             <div className={`
             rounded-[1000px] w-10 h-10 border  text-lg text-center align-middle leading-9
             ${props.isActive ? "text-black bg-light-blue border-light-blue" : "text-white border-white"}

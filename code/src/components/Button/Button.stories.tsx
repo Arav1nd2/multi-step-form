@@ -24,3 +24,12 @@ Secondary.args = {
     onClick: () => console.log("clicked button")
 };
 
+
+export const Final = Template.bind({});
+Final.args = {
+    type: "final",
+    children: "Confirm",
+    onClick: () => console.log("clicked button")
+};
+
+

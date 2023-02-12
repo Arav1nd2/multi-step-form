@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { generateID } from "../../utils";
 
 interface FormInputProps {
     type: string,
@@ -45,7 +46,7 @@ export function FormInput(props: FormInputProps) {
             setShowInputError(props.setError);
     }, [props.setError])
 
-    const formID = `form-input-${guid()}-${guid()}`;
+    const formID = useMemo(() => `form-input-${generateID()}`, []);
 
     const onChange = useCallback((event: React.FormEvent<HTMLInputElement>) => {
         const ctx = {
@@ -59,7 +60,7 @@ export function FormInput(props: FormInputProps) {
                 ctx.validationHadErrors = validator(inputRef, setError);
                 return ctx.validationHadErrors;
             },
-            setError: (val: boolean): void => {
+            setShowError: (val: boolean): void => {
                 console.log("Setting error!!!");
                 ctx.setErrorCalled = true;
                 setShowInputError(val);
@@ -116,10 +117,6 @@ function validator(ref: React.MutableRefObject<HTMLInputElement | null>, setErro
     setError("");
     return false;
 }
-
-function guid() {
-    return (((1 + Math.random()) * 0x10000) | 0).toString(16);
-};
 
 function getMessage(type: ErrorType, name: string = "") {
     switch (type) {
