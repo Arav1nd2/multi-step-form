@@ -22,7 +22,7 @@ export function SelectPlanForm() {
                         key={plan.id}
                         icon={plan.icon}
                         title={plan.title}
-                        price={plan.monthlyCost}
+                        price={formAPI!.planInfo.pricingType === PriceUnit.MONTHLY ? plan.monthlyCost : plan.yearlyCost}
                         units={formAPI!.planInfo.pricingType}
                         isActive={formAPI!.planInfo.isPlanActive(plan.id)}
                         onClick={() => formAPI!.planInfo.setPlanAsActive(plan.id)}

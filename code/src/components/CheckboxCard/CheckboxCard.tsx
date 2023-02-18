@@ -17,7 +17,7 @@ export function CheckboxCard(props: CheckboxCardProps) {
     return (
         <label htmlFor={checkboxID}>
             <div className={`
-                flex border items-center p-3 rounded-lg
+                flex border items-center p-3 rounded-lg cursor-pointer
                 ${props.isChecked ? "bg-magnolia border-purple-blue" : "border-light-gray"}
                 hover:border-purple-blue
             `}>
