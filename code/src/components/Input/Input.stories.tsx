@@ -15,16 +15,7 @@ Text.args = {
     placeholder: "e.g. Stephen King",
     type: "text",
     label: "Name",
-    validations: {
-        isRequired: true,
-    },
     name: "Name",
-    onInputChange: (event) => {
-        const isInvalid = event.validate();
-        if (isInvalid) {
-            event.setShowError(isInvalid);
-        }
-    }
 };
 
 
@@ -33,18 +24,5 @@ InvalidEmail.args = {
     placeholder: "e.g. Stephen King",
     type: "text",
     label: "Email",
-    validations: {
-        isRequired: true,
-        regex: "^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$"
-    },
     name: "Email",
-    value: "test",
-    onInputChange: (event) => {
-        const isInvalid = event.validate();
-        console.log("Validating input: isInvalid?:" + event.validate());
-        console.log("Input changed", event);
-        if (isInvalid) {
-            event.setError(isInvalid);
-        }
-    }
 };
