@@ -9,7 +9,7 @@ export function MainSection({ children }: { children: ReactNode }) {
           -mt-24 sm:mt-0
           pb-2 sm:pb-0
           sm:w-full
-          sm:rounded-r-xl rounded-xl
+          sm:rounded-r-xl sm:rounded-l-none rounded-xl
         `}>
             {children}
         </div>
