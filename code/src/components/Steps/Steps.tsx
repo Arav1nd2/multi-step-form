@@ -15,7 +15,7 @@ export function Steps(props: StepProps) {
     }
     return (
         <div className={`
-            flex w-3/4 justify-evenly mx-auto mt-12
+            flex w-3/4 justify-evenly mx-auto mt-10
             sm:w-full sm:flex-col sm:items-start sm:ml-6 sm:gap-y-8
         `}>
             {

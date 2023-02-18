@@ -7,22 +7,7 @@ export function FormSummary() {
 
     if (formAPI?.step != 4) return <></>;
 
-    const state = {
-        plan: "Arcade",
-        unit: PriceUnit.MONTHLY,
-        planPrice: "9",
-        addOns: [
-            {
-                name: "Online service",
-                price: "1"
-            },
-            {
-                name: "Larger storage",
-                price: "2"
-            }
-        ],
-        total: "12"
-    }
+    const state = formAPI.getFormSummary();
 
     const unitString = state.unit === PriceUnit.MONTHLY ? "Monthly" : "Yearly";
     const totalString = state.unit === PriceUnit.MONTHLY ? "month" : "year";
@@ -33,10 +18,10 @@ export function FormSummary() {
                 <div className="flex items-center justify-between mb-3">
                     <div>
                         <h3 className="text-md text-marine-blue font-medium">{state.plan}&nbsp;({unitString})</h3>
-                        <a href="#" className="text-md text-cool-gray underline hover:text-purple-blue-50">Change</a>
+                        <a href="#" className="text-md text-cool-gray underline hover:text-purple-blue-50" onClick={() => formAPI.goToStep(2)}>Change</a>
                     </div>
                     <h2 className="text-lg text-marine-blue font-medium">
-                        {formatPrice(state.planPrice, state.unit)}
+                        {formatPrice(state.planPrice || "", state.unit)}
                     </h2>
                 </div>
                 <hr />

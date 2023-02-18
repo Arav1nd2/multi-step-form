@@ -39,7 +39,10 @@ export function StepFormLayout(props: StepFormProps) {
                 <Button
                     type={props.isLast ? "final" : "primary"}
                     className="ml-auto"
-                    onClick={() => { formAPI?.nextStep() }}
+                    onClick={() => {
+                        const handler = formAPI?.getSubmitHandler();
+                        handler();
+                    }}
                 >
                     {props.isLast ? "Confirm" : "Next Step"}
                 </Button>

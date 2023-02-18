@@ -6,7 +6,8 @@ interface CardProps {
     title: string,
     price: string,
     units: PriceUnit,
-    isActive: boolean
+    isActive: boolean,
+    onClick: any
 }
 
 export function Card(props: CardProps) {
@@ -21,7 +22,7 @@ export function Card(props: CardProps) {
             flex-auto
             items-start
             sm:flex-col
-        `}>
+        `} onClick={props.onClick}>
             <img src={props.icon} className="block max-w-[50px] mr-5 sm:mb-12" />
             <section>
                 <h3 className="font-medium text-marine-blue text-md">{props.title}</h3>
